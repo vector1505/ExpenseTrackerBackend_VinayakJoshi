@@ -1,7 +1,6 @@
 import admin from "firebase-admin"
 import dotenv from "dotenv"
 
-// Load environment variables as early as possible
 dotenv.config()
 
 // Initialize Firebase service account with credentials from environment variables

@@ -1,4 +1,3 @@
-
 import express from "express"
 import { getMonthlyReport, getCategoryReport } from "../controllers/reportController.js"
 import authenticate from "../middleware/authenticate.js"
@@ -6,7 +5,7 @@ import { validateMonthlyReport, validateCategoryReport } from "../middleware/val
 
 const router = express.Router()
 
-
+// using the firebase authentication middleware for all report routes
 router.use(authenticate)
 
 router.get("/monthly", validateMonthlyReport, getMonthlyReport)

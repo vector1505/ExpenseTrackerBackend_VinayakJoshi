@@ -26,5 +26,4 @@ const userSchema = new mongoose.Schema({
   },
 })
 
-// Create and export User model for database operations
 export default mongoose.model("User", userSchema)
