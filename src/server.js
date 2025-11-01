@@ -4,6 +4,10 @@ import cors from "cors"
 import dotenv from "dotenv"
 
 import authRoutes from "./routes/auth.js"
+import expenseRoutes from "./routes/expenses.js"
+import { errorHandler } from "./middleware/errorHandler.js"
+import reportRoutes from "./routes/reports.js"
+
 
 dotenv.config()
 
@@ -32,4 +36,9 @@ mongoose.connect(MONGO_URI, {
     console.error("Error connecting to MongoDB:", error);
 }); 
 
-app.use("/api/auth", authRoutes)
+app.use("/api/auth", authRoutes);
+app.use("/api/expenses", expenseRoutes)
+app.use("/api/reports", reportRoutes)
+
+app.use(errorHandler)
+
